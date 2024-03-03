@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adding Program</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+</head>
+<body>
+    <center>
+    <h2>Javascript Arithmetic</h2>
+    <p>A typical arithmetic operation takes two numbers and produces a new number.</p>
+    
+    <form id="arithmeticForm">
+        <label for="num1">First Number:</label>
+        <input type="number" id="num1" name="num1"><br><br>
+        
+        <label for="num2">Second Number:</label>
+        <input type="number" id="num2" name="num2"><br><br>
+        
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    
+    <div id="results"></div>
+
+    <script>
+        function calculate() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+
+            let sum = num1 + num2;
+            let difference = num1 - num2;
+            let product = num1 * num2;
+            let quotient = num1 / num2;
+
+            let resultHtml = `
+                <p>First Number: ${num1}</p>
+                <p>Second Number: ${num2}</p>
+                <p>Sum of the two Numbers(Total): ${sum}</p>
+                <p>Difference of the two Numbers(Division /): ${difference}</p>
+                <p>Product of the two Numbers(Multiplication *): ${product}</p>
+                <p>Quotient of the two Numbers(Subtraction -): ${quotient}</p>
+            `;
+
+            document.getElementById('results').innerHTML = resultHtml;
+        }
+    </script>
+</body>
+</html>
